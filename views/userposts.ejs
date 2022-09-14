@@ -1,0 +1,100 @@
+<br />
+<div>
+  <h6 style="text-align: center">Create New Post</h6>
+  <div>
+    <form action="/dev/users/posts" method="POST">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          class="form-control"
+          placeholder="Enter Title"
+        />
+      </div>
+      <div class="form-group">
+        <label for="Content">Content</label>
+        <input
+          type="text"
+          id="content"
+          name="content"
+          class="form-control"
+          placeholder="Enter Description"
+        />
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          id="published"
+          name="published"
+          checked="checked"
+        />Publish
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-primary btn-block"
+        style="float: right"
+      >
+        Add Post
+      </button>
+      <!-- <a onclick="" class="btn btn-secondary" style="float: right" >Drafts Posts</a  -->
+      <!-- <p class="lead mt-4">DRAFT POSTS<a href="/dev/users/drafts"></a></p> -->
+    </form>
+    <p class="lead mt-4">
+      Check Drafrs here <a href="/dev/users/drafts">Drafts</a>
+    </p>
+  </div>
+  <hr
+    style="
+      height: 2px;
+      border-width: 0;
+      color: gray;
+      background-color: gray;
+      margin-top: 70px;
+    "
+  />
+  <h6 style="text-align: center">Your Posts</h6>
+  <div>
+    <ul style="list-style-type: none">
+      <%data.forEach(function(item){%>
+      <li
+        style="
+          border: 1px solid rgb(251, 249, 249);
+          border-radius: 5px;
+          margin-bottom: 10px;
+          margin-top: 10px;
+          padding-top: 2px;
+          padding-left: 10px;
+        "
+      >
+        <strong> <%= item.title %> </strong>
+        <!-- 
+        <a
+          id="deletebtn"
+          class="btn btn-close"
+          style="float: right; background-color: tomato"
+          type="submit"
+        ></a>
+        -->
+        <form action="/dev/users/posts" method="DELETE">
+          <button
+            type="submit"
+            class="btn btn-close"
+            style="float: right; background-color: tomato"
+          ></button>
+        </form>
+
+        <p class="card-title"><%= item.content %></p>
+        <% if (item.published==true ) { %>
+        <p style="color: green"><small>Published</small></p>
+        <%} else { %>
+        <p></p>
+        <% } %>
+      </li>
+
+      <% })%>
+    </ul>
+  </div>
+</div>

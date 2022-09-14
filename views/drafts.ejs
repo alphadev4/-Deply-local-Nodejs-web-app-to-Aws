@@ -1,0 +1,16 @@
+<h3 style="text-align: center; padding:20px; color:black">DRAFT POSTS</h3>
+<ul style="list-style-type: none;">
+    <%data.forEach(function(item){%>
+        <li style="border: 1px solid rgb(251, 249, 249); border-radius: 5px; margin-bottom: 10px;margin-top:10px;padding-top: 2px; padding-left: 10px;"><strong><%= item.title %></strong>
+        <p><%= item.content %> </p>
+        <% if (item.published == true ) { %>
+            <p style="color: green ;"><small>Publishded</small> </p>
+            <%} else { %>
+            <p>Draft</p>
+            <% } %>
+            
+        
+    </li>
+
+ <%  })%>
+</ul>

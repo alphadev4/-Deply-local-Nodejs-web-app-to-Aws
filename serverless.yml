@@ -1,0 +1,26 @@
+org: meerabshafiq
+console: true
+service: project
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  timeout: 30
+  stage: dev
+  runtime: nodejs12.x
+  environment:
+    STAGE: dev
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true
+      - http:
+          path: /
+          method: ANY
+          cors: true
+    # authorizer: aws_iam
