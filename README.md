@@ -2,7 +2,7 @@
 ### -Deply-local-Nodejs-web-app-to-Aws
 
 ##Basic Introduction
-The code is written in **Nodejs, Express, Ejs (template engine) and [Sequelize](https://sequelize.org/)(with Postgres)**. The code is deployed and hosted on AWS lambda with AWS RDS database and NodeJs Serverless Framework.
+The code is written in **Nodejs, Express, Ejs (template engine) and [Sequelize](https://sequelize.org/)(with Postgres)**. The code is deployed and hosted on AWS lambda with AWS RDS database and [NodeJs Serverless Framework](https://www.serverless.com/framework/docs/guides/sdk/nodejs).
 
 ### - Create AWS RDS instance
 
